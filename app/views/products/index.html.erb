@@ -1,0 +1,22 @@
+<h1>Index Page</h1>
+
+Products in your cart:
+<ul>
+<% cart.each do |prod| %>
+    <li><%= prod %></li>
+<% end %>
+</ul>
+
+<%= form_tag({
+    controller: "products",
+    action: "add",
+    method: "post"
+    }) do %>
+
+<input name=product>
+<input type=submit value="add to cart">
+
+<% end %>
+
+<br>
+<%= params.inspect %>
